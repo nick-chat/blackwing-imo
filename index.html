@@ -135,7 +135,7 @@ section{min-height:100vh;padding:100px 60px 60px;position:relative;z-index:1;}
   width:100px;height:48px;display:flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
   border-radius:6px;font-size:11px;font-weight:500;color:var(--muted);
-  text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;
+  text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;cursor:pointer;
 }
 .pyr-cell:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15);}
 .pyr-cell.top{
@@ -463,15 +463,15 @@ footer .tagline span{color:var(--ice);}
       <div class="side-header"><h4>Traditional Model</h4><span class="side-tag">Outdated</span></div>
       <div class="side-body">
         <div class="pyramid">
-          <div class="pyramid-row"><div class="pyr-cell top">CEO</div></div>
+          <div class="pyramid-row"><div class="pyr-cell top" data-tier="ceo">CEO</div></div>
           <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#ff4d4d" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#ff4d4d" stroke-width="1" fill="none"/></svg>
-          <div class="pyramid-row"><div class="pyr-cell">VP</div><div class="pyr-cell">VP</div></div>
+          <div class="pyramid-row"><div class="pyr-cell" data-tier="vp">VP</div><div class="pyr-cell" data-tier="vp">VP</div></div>
           <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
-          <div class="pyramid-row"><div class="pyr-cell">Manager</div><div class="pyr-cell">Manager</div><div class="pyr-cell">Manager</div></div>
+          <div class="pyramid-row"><div class="pyr-cell" data-tier="mgr">Manager</div><div class="pyr-cell" data-tier="mgr">Manager</div><div class="pyr-cell" data-tier="mgr">Manager</div></div>
           <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
-          <div class="pyramid-row"><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div></div>
+          <div class="pyramid-row"><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div></div>
           <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
-          <div class="pyramid-row"><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div></div>
+          <div class="pyramid-row"><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div><div class="pyr-cell" data-tier="agent">Agent</div></div>
           <div class="pyramid-label"><strong>One person at the top</strong> controls everything. Earnings trickle down. Growth is capped by your position in someone else's structure.</div>
         </div>
       </div>
@@ -617,6 +617,18 @@ footer .tagline span{color:var(--ice);}
 
 <script>
 const tiers = {
+  ceo: { name:'CEO', pct:'Top of Pyramid', color:'#ff4d4d',
+    desc:'In the traditional model, the CEO sits at the top and profits from everyone below. Growth for everyone else is capped by their position in the hierarchy.',
+    stats:['One person controls everything','Earnings trickle down','Your growth depends on their decisions','You build their empire, not yours']},
+  vp: { name:'Vice President', pct:'Upper Management', color:'#ff4d4d',
+    desc:'VPs report to the CEO and manage regions. They earn more than those below but are still limited by the person above them. Their ceiling is someone else\'s floor.',
+    stats:['Reports to CEO','Manages managers below','Limited by hierarchy position','No ownership of their structure']},
+  mgr: { name:'Manager', pct:'Middle Management', color:'#ff4d4d',
+    desc:'Managers are stuck in the middle \u2014 pressure from above, responsibility below. They train agents who make money for people higher up the chain.',
+    stats:['Squeezed from both directions','Trains agents for someone else\'s benefit','Limited earning potential','No equity in the structure']},
+  agent: { name:'Agent', pct:'Bottom of Pyramid', color:'#ff4d4d',
+    desc:'In the traditional model, agents do the most work but earn the least. No matter how hard they grind, their position in the pyramid caps their income.',
+    stats:['Does the most work, earns the least','No path to ownership','Income capped by position','Replaceable \u2014 no equity built']},
   bw: { name:'Black Wing', pct:'145%', color:'#4FC3F7',
     desc:'The pinnacle of the New Era IMO. Black Wing is the overarching entity that supports the entire structure \u2014 providing resources, training, and infrastructure for all Eagles and their organizations.',
     stats:['Oversees all Eagle organizations','Provides carrier access & training','Highest contract level at 145%']},
