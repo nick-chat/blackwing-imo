@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Era IMO Structure — Black Wing Ventures</title>
+<meta name="description" content="Black Wing Ventures — New Era IMO organizational structure and growth cycle.">
+<meta property="og:title" content="Black Wing Ventures — New Era IMO Structure">
+<meta property="og:description" content="See how our horizontal structure beats the traditional pyramid. Every agent builds equity in their own organization.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#050508">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050508;--ice:#4FC3F7;--ice-dim:rgba(79,195,247,0.12);
+  --gold:#ffd700;--gold-dim:rgba(255,215,0,0.10);
+  --silver:#c0c0c0;--purple:#a08cc8;--green:#78b48c;--brown:#b4a082;
+  --white:#f0f2f5;--muted:#6a7080;--card:#0d0f14;
+  --card-border:rgba(255,255,255,0.06);--danger:#ff4d4d;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:'Sora',sans-serif;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.grid-bg{
+  position:fixed;inset:0;z-index:0;opacity:0.02;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 40px;
+  background:rgba(5,5,8,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--card-border);
+}
+.nav-brand{display:flex;align-items:center;gap:14px;}
+.nav-brand svg{width:36px;height:36px;}
+.nav-brand h1{
+  font-family:'Orbitron',sans-serif;font-weight:800;
+  font-size:18px;letter-spacing:3px;text-transform:uppercase;
+}
+.nav-brand .nsub{
+  font-family:'Orbitron',sans-serif;font-weight:400;
+  font-size:8px;letter-spacing:5px;color:var(--ice);text-transform:uppercase;margin-top:1px;
+}
+.nav-links{display:flex;gap:6px;}
+.nav-links a{
+  font-family:'Orbitron',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;text-decoration:none;
+  color:var(--muted);padding:8px 18px;border-radius:6px;
+  border:1px solid transparent;transition:all 0.3s;
+}
+.nav-links a:hover,.nav-links a.active{
+  color:var(--ice);border-color:rgba(79,195,247,0.2);background:rgba(79,195,247,0.05);
+}
+section{min-height:100vh;padding:100px 60px 60px;position:relative;z-index:1;}
+.hero{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;min-height:100vh;
+}
+.hero-wing{width:120px;height:120px;margin-bottom:30px;animation:floatWing 4s ease-in-out infinite;}
+@keyframes floatWing{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero h2{
+  font-family:'Orbitron',sans-serif;font-weight:900;
+  font-size:52px;letter-spacing:6px;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--white) 0%,var(--ice) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:12px;
+}
+.hero p{font-size:16px;color:var(--muted);letter-spacing:1px;max-width:500px;line-height:1.7;margin-bottom:40px;}
+.hero-scroll{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--ice);font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Orbitron',sans-serif;animation:pulse 2s ease-in-out infinite;cursor:pointer;text-decoration:none;
+}
+.hero-scroll .chevron{
+  width:20px;height:20px;border-right:2px solid var(--ice);
+  border-bottom:2px solid var(--ice);transform:rotate(45deg);opacity:0.5;
+}
+@keyframes pulse{0%,100%{opacity:0.6}50%{opacity:1}}
+.section-header{text-align:center;margin-bottom:50px;}
+.section-header .tag{
+  font-family:'Orbitron',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:var(--ice);
+  display:inline-block;padding:6px 20px;border-radius:100px;
+  background:var(--ice-dim);margin-bottom:16px;
+}
+.section-header h3{
+  font-family:'Orbitron',sans-serif;font-weight:800;
+  font-size:36px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;
+}
+.section-header p{font-size:14px;color:var(--muted);letter-spacing:0.5px;max-width:600px;margin:0 auto;}
+
+/* COMPARISON */
+.comparison{display:flex;gap:30px;align-items:stretch;max-width:1400px;margin:0 auto;}
+.side{
+  flex:1;border-radius:16px;overflow:hidden;
+  border:1px solid var(--card-border);background:var(--card);position:relative;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.side:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.side::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.side.old::before{background:linear-gradient(90deg,transparent,var(--danger),transparent);}
+.side.new::before{background:linear-gradient(90deg,transparent,var(--ice),transparent);}
+.side-header{
+  padding:28px 36px 22px;border-bottom:1px solid var(--card-border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.side-header h4{
+  font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:20px;letter-spacing:2px;text-transform:uppercase;
+}
+.side.old .side-header h4{color:var(--muted);}
+.side.new .side-header h4{color:var(--ice);}
+.side-tag{
+  font-size:10px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;padding:5px 14px;border-radius:100px;
+}
+.side.old .side-tag{background:rgba(255,77,77,0.1);color:var(--danger);}
+.side.new .side-tag{background:var(--ice-dim);color:var(--ice);}
+.side-body{padding:36px;display:flex;flex-direction:column;align-items:center;}
+.glow-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);opacity:0.06;}
+.side.new .glow-orb{width:250px;height:250px;background:var(--ice);bottom:-40px;right:-40px;}
+.side.old .glow-orb{width:160px;height:160px;background:var(--danger);top:-20px;left:50%;transform:translateX(-50%);}
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;}
+.pyramid-row{display:flex;justify-content:center;gap:8px;}
+.pyr-cell{
+  width:100px;height:48px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
+  border-radius:6px;font-size:11px;font-weight:500;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;
+}
+.pyr-cell:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15);}
+.pyr-cell.top{
+  background:rgba(255,77,77,0.08);border-color:rgba(255,77,77,0.2);
+  color:var(--danger);font-weight:700;width:130px;height:52px;font-size:12px;
+}
+.pyr-cell.top:hover{background:rgba(255,77,77,0.15);}
+.pyr-arrow{opacity:0.2;margin:2px 0;}
+.pyramid-label{margin-top:20px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:0.5px;line-height:1.6;}
+.pyramid-label strong{color:var(--danger);font-weight:600;}
+.vs-divider{display:flex;flex-direction:column;align-items:center;justify-content:center;width:60px;flex-shrink:0;}
+.vs-line{width:1px;flex:1;background:linear-gradient(to bottom,transparent,var(--card-border),transparent);}
+.vs-badge{font-family:'Orbitron',sans-serif;font-weight:900;font-size:18px;letter-spacing:3px;color:var(--muted);background:var(--bg);padding:14px 0;}
+.h-tiers{display:flex;flex-direction:column;gap:6px;width:100%;}
+.h-tier{display:flex;align-items:center;gap:0;cursor:pointer;transition:transform 0.2s;}
+.h-tier:hover{transform:translateX(6px);}
+.h-label{
+  width:110px;flex-shrink:0;padding:10px 12px;text-align:right;
+  font-family:'Orbitron',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+}
+.h-pct{font-weight:400;font-size:10px;color:var(--ice);display:block;margin-top:1px;font-family:'Sora',sans-serif;letter-spacing:0;}
+.h-bar-track{flex:1;height:44px;position:relative;}
+.h-bar{
+  height:100%;border-radius:0 8px 8px 0;position:relative;overflow:hidden;
+  display:flex;align-items:center;padding-left:14px;border:1px solid;border-left:none;transition:all 0.3s;
+}
+.h-tier:hover .h-bar{filter:brightness(1.3);}
+.h-bar-inner{position:absolute;inset:0;opacity:0.12;}
+.h-bar .dots{display:flex;gap:5px;position:relative;z-index:1;}
+.h-bar .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:0.5;transition:transform 0.2s;}
+.h-tier:hover .dot{transform:scale(1.3);}
+.h-bar .dot:first-child{opacity:0.9;}
+.tier-bw .h-bar{border-color:rgba(79,195,247,0.4);color:var(--ice);width:100%;}
+.tier-bw .h-bar-inner{background:linear-gradient(90deg,var(--ice),transparent);}
+.tier-bw .h-label{color:var(--ice);}
+.tier-eagle .h-bar{border-color:rgba(255,215,0,0.3);color:#ffd700;width:86%;}
+.tier-eagle .h-bar-inner{background:linear-gradient(90deg,#ffd700,transparent);}
+.tier-hawk .h-bar{border-color:rgba(192,192,192,0.25);color:#c0c0c0;width:72%;}
+.tier-hawk .h-bar-inner{background:linear-gradient(90deg,#c0c0c0,transparent);}
+.tier-raven .h-bar{border-color:rgba(160,140,200,0.25);color:#a08cc8;width:60%;}
+.tier-raven .h-bar-inner{background:linear-gradient(90deg,#a08cc8,transparent);}
+.tier-sparrow .h-bar{border-color:rgba(120,180,140,0.25);color:#78b48c;width:48%;}
+.tier-sparrow .h-bar-inner{background:linear-gradient(90deg,#78b48c,transparent);}
+.tier-nest .h-bar{border-color:rgba(180,160,130,0.25);color:#b4a082;width:36%;}
+.tier-nest .h-bar-inner{background:linear-gradient(90deg,#b4a082,transparent);}
+.h-note{margin-top:20px;font-size:12px;color:var(--muted);letter-spacing:0.5px;line-height:1.6;text-align:center;}
+.h-note strong{color:var(--ice);font-weight:600;}
+
+/* CYCLE SECTION */
+.cycle-layout{display:flex;gap:40px;align-items:stretch;max-width:1500px;margin:0 auto;}
+.cycle-col{display:flex;flex-direction:column;justify-content:center;}
+.cycle-col.left{width:340px;flex-shrink:0;}
+.cycle-col.center{flex:1;display:flex;align-items:center;justify-content:center;}
+.cycle-col.right{width:360px;flex-shrink:0;}
+.eagle-card{
+  background:var(--card);border:1px solid rgba(255,215,0,0.12);
+  border-radius:14px;padding:28px;position:relative;overflow:hidden;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.eagle-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(255,215,0,0.05);}
+.eagle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.eagle-card-glow{position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:var(--gold);filter:blur(80px);opacity:0.04;}
+.eagle-title{font-family:'Orbitron',sans-serif;font-weight:800;font-size:22px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:flex;align-items:baseline;gap:10px;}
+.eagle-pct{font-size:13px;font-weight:500;opacity:0.6;font-family:'Sora',sans-serif;}
+.eagle-desc{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.7;}
+.eagle-desc strong{color:var(--gold);font-weight:600;}
+.eagle-teams{margin-top:18px;display:flex;flex-direction:column;gap:7px;}
+.eagle-team{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:8px;
+  background:rgba(255,215,0,0.03);border:1px solid rgba(255,215,0,0.08);
+  cursor:pointer;transition:all 0.3s;
+}
+.eagle-team:hover{background:rgba(255,215,0,0.08);border-color:rgba(255,215,0,0.2);transform:translateX(4px);}
+.eagle-team-icon{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  border:1px solid rgba(192,192,192,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',sans-serif;font-size:8px;font-weight:700;
+  color:var(--silver);background:rgba(192,192,192,0.05);
+}
+.eagle-team-text{font-size:11px;color:var(--silver);}
+.eagle-team-text .team-sub{font-size:9px;color:var(--muted);display:block;margin-top:1px;}
+.eagle-status{
+  display:inline-block;margin-top:14px;
+  font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;background:var(--gold-dim);color:var(--gold);
+}
+
+.cycle-svg-wrap{width:520px;height:520px;position:relative;}
+.cycle-svg{width:100%;height:100%;}
+.ring-bg{fill:none;stroke:rgba(79,195,247,0.08);stroke-width:1.5;}
+.ring-dash{fill:none;stroke:rgba(79,195,247,0.05);stroke-width:1;stroke-dasharray:6 4;animation:dashSpin 40s linear infinite;transform-origin:260px 260px;}
+@keyframes dashSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.arc-arrow{fill:none;stroke-width:2;opacity:0.5;stroke-dasharray:8 5;animation:dashFlow 2s linear infinite;}
+@keyframes dashFlow{from{stroke-dashoffset:0}to{stroke-dashoffset:-26}}
+.arc-glow{fill:none;stroke-width:6;opacity:0.06;filter:blur(2px);}
+.svg-node{cursor:pointer;transition:transform 0.3s;}
+.svg-node:hover{transform:scale(1.08);}
+.svg-node:hover .node-ring-main{stroke-width:3;filter:drop-shadow(0 0 8px currentColor);}
+.node-ring-main{fill:var(--card);stroke-width:2;transition:all 0.3s;}
+.node-ring-outer{fill:none;stroke-width:1;opacity:0.2;}
+.node-text{font-family:'Orbitron',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-anchor:middle;pointer-events:none;}
+.node-pct{font-family:'Sora',sans-serif;font-weight:400;font-size:9px;text-anchor:middle;opacity:0.65;pointer-events:none;}
+.node-label{font-family:'Orbitron',sans-serif;font-weight:400;font-size:7px;letter-spacing:2px;text-anchor:middle;fill:var(--muted);pointer-events:none;}
+.center-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:14px;letter-spacing:3px;fill:var(--ice);text-anchor:middle;opacity:0.6;}
+.center-sub{font-family:'Sora',sans-serif;font-size:10px;fill:var(--muted);text-anchor:middle;}
+.arc-label-text{font-family:'Orbitron',sans-serif;font-weight:600;font-size:7px;letter-spacing:2px;fill:var(--ice);opacity:0.35;text-anchor:middle;}
+
+.hawk-section-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;color:var(--silver);text-transform:uppercase;margin-bottom:4px;}
+.hawk-section-sub{font-size:11px;color:var(--muted);letter-spacing:0.5px;margin-bottom:20px;line-height:1.6;}
+.hawk-section-sub strong{color:var(--silver);font-weight:600;}
+.downline-tree{display:flex;flex-direction:column;padding-left:20px;border-left:2px solid rgba(192,192,192,0.12);}
+.dl-node{display:flex;align-items:center;gap:10px;padding:5px 0;position:relative;cursor:pointer;transition:transform 0.2s;}
+.dl-node:hover{transform:translateX(6px);}
+.dl-node::before{content:'';position:absolute;left:-21px;top:50%;width:20px;height:1px;background:rgba(255,255,255,0.06);}
+.dl-badge{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 12px;border-radius:6px;
+  background:var(--card);border:1px solid;
+  font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;transition:all 0.3s;
+}
+.dl-node:hover .dl-badge{filter:brightness(1.4);}
+.dl-pct{font-weight:400;opacity:0.6;font-size:9px;font-family:'Sora',sans-serif;letter-spacing:0;}
+.dl-badge.nest-b{border-color:rgba(180,160,130,0.2);color:var(--brown);}
+.dl-badge.sparrow-b{border-color:rgba(120,180,140,0.2);color:var(--green);}
+.dl-badge.raven-b{border-color:rgba(160,140,200,0.2);color:var(--purple);}
+.dl-badge.hawk-b{border-color:rgba(192,192,192,0.25);color:var(--silver);}
+.dl-desc{font-size:9px;color:var(--muted);}
+.hawk-note{margin-top:16px;padding:12px 16px;background:rgba(192,192,192,0.04);border:1px solid rgba(192,192,192,0.08);border-radius:8px;font-size:11px;color:var(--silver);line-height:1.6;}
+
+/* MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:rgba(5,5,8,0.85);backdrop-filter:blur(10px);
+  align-items:center;justify-content:center;animation:fadeIn 0.3s;
+}
+.modal-overlay.active{display:flex;}
+.modal{
+  background:var(--card);border:1px solid var(--card-border);
+  border-radius:16px;padding:40px;max-width:480px;width:90%;
+  position:relative;animation:slideUp 0.3s ease;
+}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:16px 16px 0 0;}
+.modal-close{
+  position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;
+  border:1px solid var(--card-border);background:transparent;color:var(--muted);
+  font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;
+}
+.modal-close:hover{color:var(--white);border-color:rgba(255,255,255,0.2);}
+.modal-tier{font-family:'Orbitron',sans-serif;font-weight:800;font-size:28px;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}
+.modal-pct{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:500;opacity:0.6;margin-bottom:16px;}
+.modal-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;}
+.modal-stat{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:8px;
+  background:rgba(255,255,255,0.02);border:1px solid var(--card-border);
+  font-size:12px;margin-bottom:8px;
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.flow-bar{
+  max-width:1400px;margin:50px auto 0;display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:14px 30px;border-radius:10px;background:var(--card);border:1px solid var(--card-border);
+}
+.flow-step{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;letter-spacing:0.5px;}
+.fs-dot{width:8px;height:8px;border-radius:50%;border:1.5px solid;}
+.fs-arrow{color:var(--muted);font-size:11px;}
+.fs-label{font-size:8px;color:var(--muted);margin-left:1px;}
+
+footer{text-align:center;padding:40px 60px;border-top:1px solid var(--card-border);margin-top:60px;}
+footer .tagline{font-family:'Orbitron',sans-serif;font-weight:400;font-size:11px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+footer .tagline span{color:var(--ice);}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+@media(max-width:1200px){
+  section{padding:80px 30px 40px;}
+  .comparison{flex-direction:column;max-width:600px;margin:0 auto;}
+  .vs-divider{flex-direction:row;width:auto;height:60px;}
+  .vs-line{height:1px;width:100%;flex:1;}
+  .cycle-layout{flex-direction:column;align-items:center;}
+  .cycle-col.left,.cycle-col.right{width:100%;max-width:500px;}
+  .cycle-svg-wrap{width:400px;height:400px;}
+}
+@media(max-width:768px){
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .hero h2{font-size:32px;letter-spacing:3px;}
+  .section-header h3{font-size:24px;}
+  .cycle-svg-wrap{width:320px;height:320px;}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav>
+  <div class="nav-brand">
+    <svg viewBox="0 0 60 60" fill="none">
+      <path d="M30 12 C20 12, 6 20, 4 36 C8 28, 16 22, 30 26 C44 22, 52 28, 56 36 C54 20, 40 12, 30 12Z" fill="url(#wgN)" stroke="rgba(79,195,247,0.3)" stroke-width="0.5"/>
+      <circle cx="30" cy="24" r="1.5" fill="#4FC3F7" opacity="0.8"/>
+      <defs><linearGradient id="wgN" x1="4" y1="20" x2="56" y2="40"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="50%" stop-color="#2a2a3e"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient></defs>
+    </svg>
+    <div><h1>Black Wing</h1><div class="nsub">Ventures</div></div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero" class="active">Home</a>
+    <a href="#structure">Structure</a>
+    <a href="#cycle">Growth Cycle</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <svg class="hero-wing" viewBox="0 0 120 120" fill="none">
+    <path d="M60 25 C40 25, 12 40, 8 72 C16 56, 32 44, 60 52 C88 44, 104 56, 112 72 C108 40, 80 25, 60 25Z" fill="url(#hwg)" stroke="rgba(79,195,247,0.3)" stroke-width="0.8"/>
+    <circle cx="60" cy="48" r="3" fill="#4FC3F7" opacity="0.8"/>
+    <circle cx="60" cy="48" r="8" fill="none" stroke="#4FC3F7" opacity="0.15" stroke-width="0.5"/>
+    <defs><linearGradient id="hwg" x1="8" y1="40" x2="112" y2="80"><stop offset="0%" stop-color="#12121e"/><stop offset="50%" stop-color="#222238"/><stop offset="100%" stop-color="#12121e"/></linearGradient></defs>
+  </svg>
+  <h2>New Era IMO</h2>
+  <p>A different kind of structure. No pyramid. No ceiling. Every agent builds equity in their own organization.</p>
+  <a href="#structure" class="hero-scroll">Explore<div class="chevron"></div></a>
+</section>
+
+<section id="structure">
+  <div class="section-header reveal">
+    <span class="tag">Organizational Structure</span>
+    <h3>Why We're Different</h3>
+    <p>The traditional model has one person at the top who profits from everyone below. We flipped the script.</p>
+  </div>
+  <div class="comparison">
+    <div class="side old reveal-left">
+      <div class="glow-orb"></div>
+      <div class="side-header"><h4>Traditional Model</h4><span class="side-tag">Outdated</span></div>
+      <div class="side-body">
+        <div class="pyramid">
+          <div class="pyramid-row"><div class="pyr-cell top">CEO</div></div>
+          <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#ff4d4d" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#ff4d4d" stroke-width="1" fill="none"/></svg>
+          <div class="pyramid-row"><div class="pyr-cell">VP</div><div class="pyr-cell">VP</div></div>
+          <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
+          <div class="pyramid-row"><div class="pyr-cell">Manager</div><div class="pyr-cell">Manager</div><div class="pyr-cell">Manager</div></div>
+          <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
+          <div class="pyramid-row"><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div></div>
+          <svg class="pyr-arrow" width="20" height="14"><path d="M10 0L10 14" stroke="#666" stroke-width="1"/><path d="M6 10L10 14L14 10" stroke="#666" stroke-width="1" fill="none"/></svg>
+          <div class="pyramid-row"><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div><div class="pyr-cell">Agent</div></div>
+          <div class="pyramid-label"><strong>One person at the top</strong> controls everything. Earnings trickle down. Growth is capped by your position in someone else's structure.</div>
+        </div>
+      </div>
+    </div>
+    <div class="vs-divider"><div class="vs-line"></div><div class="vs-badge">VS</div><div class="vs-line"></div></div>
+    <div class="side new reveal-right">
+      <div class="glow-orb"></div>
+      <div class="side-header"><h4>New Era Model</h4><span class="side-tag">Our Way</span></div>
+      <div class="side-body">
+        <div class="h-tiers">
+          <div class="h-tier tier-bw" data-tier="bw"><div class="h-label">Black Wing<span class="h-pct">145%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div></div></div>
+          <div class="h-tier tier-eagle" data-tier="eagle"><div class="h-label">Eagle<span class="h-pct">100%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div></div></div>
+          <div class="h-tier tier-hawk" data-tier="hawk"><div class="h-label">Hawk<span class="h-pct">85%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div></div></div>
+          <div class="h-tier tier-raven" data-tier="raven"><div class="h-label">Raven<span class="h-pct">80%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span><span class="dot"></span></div></div></div></div>
+          <div class="h-tier tier-sparrow" data-tier="sparrow"><div class="h-label">Sparrow<span class="h-pct">70%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span></div></div></div></div>
+          <div class="h-tier tier-nest" data-tier="nest"><div class="h-label">Nest<span class="h-pct">50%</span></div><div class="h-bar-track"><div class="h-bar"><div class="h-bar-inner"></div><div class="dots"><span class="dot"></span></div></div></div></div>
+        </div>
+        <div class="h-note"><strong>No ceiling.</strong> Everyone grows horizontally. Hawks build their own downlines. Eagles oversee multiple Hawk teams. <strong>You own your growth.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <div class="section-header reveal">
+    <span class="tag">Growth Cycle</span>
+    <h3>Your Path to the Top</h3>
+    <p>Start as a Nest. Progress through the cycle. Build your own team. Click any stage to learn more.</p>
+  </div>
+  <div class="cycle-layout">
+    <div class="cycle-col left reveal-left">
+      <div class="eagle-card">
+        <div class="eagle-card-glow"></div>
+        <div class="eagle-title">Eagle <span class="eagle-pct">100%</span></div>
+        <div class="eagle-desc">A separate entity that <strong>oversees multiple Hawk teams</strong> and their entire downlines. Eagles don't just lead one team — they build an <strong>organization of organizations</strong>.</div>
+        <div class="eagle-teams">
+          <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H1</div><div class="eagle-team-text">Hawk Team 1<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
+          <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H2</div><div class="eagle-team-text">Hawk Team 2<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
+          <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H3</div><div class="eagle-team-text">Hawk Team 3<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
+        </div>
+        <span class="eagle-status">Separate Entity</span>
+      </div>
+    </div>
+    <div class="cycle-col center reveal">
+      <div class="cycle-svg-wrap">
+        <svg class="cycle-svg" viewBox="0 0 520 520">
+          <defs>
+            <marker id="ab" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b4a082" opacity="0.6"/></marker>
+            <marker id="ag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#78b48c" opacity="0.6"/></marker>
+            <marker id="ap" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#a08cc8" opacity="0.6"/></marker>
+            <radialGradient id="cg"><stop offset="0%" stop-color="rgba(79,195,247,0.03)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <circle cx="260" cy="260" r="175" class="ring-bg"/>
+          <circle cx="260" cy="260" r="185" class="ring-dash"/>
+          <circle cx="260" cy="260" r="165" class="ring-dash" style="animation-direction:reverse;animation-duration:55s"/>
+          <circle cx="260" cy="260" r="90" fill="url(#cg)"/>
+          <text x="260" y="254" class="center-title">THE CYCLE</text>
+          <text x="260" y="274" class="center-sub">Grow &gt; Lead &gt; Repeat</text>
+          <path class="arc-glow" stroke="#b4a082" d="M 298,430 A 175,175 0 0,0 428,310"/>
+          <path class="arc-arrow" stroke="#b4a082" marker-end="url(#ab)" d="M 298,430 A 175,175 0 0,0 424,315"/>
+          <path class="arc-glow" stroke="#78b48c" d="M 432,280 A 175,175 0 0,0 385,120"/>
+          <path class="arc-arrow" stroke="#78b48c" marker-end="url(#ag)" d="M 432,280 A 175,175 0 0,0 388,125"/>
+          <path class="arc-glow" stroke="#a08cc8" d="M 355,98 A 175,175 0 0,0 295,86"/>
+          <path class="arc-arrow" stroke="#a08cc8" marker-end="url(#ap)" d="M 352,98 A 175,175 0 0,0 298,86"/>
+          <text x="385" y="395" class="arc-label-text" transform="rotate(-48 385 395)">GROW</text>
+          <text x="455" y="200" class="arc-label-text" transform="rotate(-80 455 200)">LEVEL UP</text>
+          <text x="328" y="78" class="arc-label-text" transform="rotate(-15 328 78)">LEAD</text>
+          <g class="svg-node" data-tier="nest" style="transform-origin:260px 435px">
+            <circle cx="260" cy="435" r="44" class="node-ring-outer" stroke="#b4a082"/>
+            <circle cx="260" cy="435" r="38" class="node-ring-main" stroke="#b4a082"/>
+            <text x="260" y="431" class="node-text" fill="#b4a082">NEST</text>
+            <text x="260" y="446" class="node-pct" fill="#b4a082">50%</text>
+          </g>
+          <text x="260" y="492" class="node-label">STAGE 1 — START HERE</text>
+          <g class="svg-node" data-tier="sparrow" style="transform-origin:435px 310px">
+            <circle cx="435" cy="310" r="44" class="node-ring-outer" stroke="#78b48c"/>
+            <circle cx="435" cy="310" r="38" class="node-ring-main" stroke="#78b48c"/>
+            <text x="435" y="304" class="node-text" fill="#78b48c" style="font-size:10px">SPARROW</text>
+            <text x="435" y="320" class="node-pct" fill="#78b48c">70%</text>
+          </g>
+          <text x="435" y="368" class="node-label">STAGE 2</text>
+          <g class="svg-node" data-tier="raven" style="transform-origin:395px 120px">
+            <circle cx="395" cy="120" r="44" class="node-ring-outer" stroke="#a08cc8"/>
+            <circle cx="395" cy="120" r="38" class="node-ring-main" stroke="#a08cc8"/>
+            <text x="395" y="116" class="node-text" fill="#a08cc8">RAVEN</text>
+            <text x="395" y="131" class="node-pct" fill="#a08cc8">80%</text>
+          </g>
+          <text x="395" y="68" class="node-label">STAGE 3</text>
+          <g class="svg-node" data-tier="hawk" style="transform-origin:260px 85px">
+            <circle cx="260" cy="85" r="50" class="node-ring-outer" stroke="#c0c0c0"/>
+            <circle cx="260" cy="85" r="44" class="node-ring-main" stroke="#c0c0c0"/>
+            <text x="260" y="80" class="node-text" fill="#c0c0c0" style="font-size:13px">HAWK</text>
+            <text x="260" y="96" class="node-pct" fill="#c0c0c0">85%</text>
+          </g>
+          <text x="260" y="30" class="node-label">STAGE 4 — BUILD YOUR TEAM</text>
+          <line x1="216" y1="85" x2="150" y2="85" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 3" opacity="0.2"/>
+          <text x="140" y="82" font-family="Orbitron,sans-serif" font-size="6" font-weight="600" fill="#ffd700" opacity="0.3" letter-spacing="1.5" text-anchor="end">EAGLE PATH</text>
+          <line x1="304" y1="85" x2="370" y2="85" stroke="#c0c0c0" stroke-width="1" stroke-dasharray="4 3" opacity="0.2"/>
+          <text x="380" y="82" font-family="Orbitron,sans-serif" font-size="6" font-weight="600" fill="#c0c0c0" opacity="0.3" letter-spacing="1.5">DOWNLINE</text>
+        </svg>
+      </div>
+    </div>
+    <div class="cycle-col right reveal-right">
+      <div class="hawk-section-title">Hawk's Downline</div>
+      <div class="hawk-section-sub">When you reach <strong>Hawk status</strong>, you build and lead your own team. Your downline follows the same cycle.</div>
+      <div class="downline-tree">
+        <div class="dl-node" data-tier="hawk"><div class="dl-badge hawk-b">HAWK <span class="dl-pct">85%</span></div><span class="dl-desc">You (team leader)</span></div>
+        <div class="dl-node" data-tier="raven"><div class="dl-badge raven-b">RAVEN <span class="dl-pct">80%</span></div><span class="dl-desc">Growing toward Hawk</span></div>
+        <div class="dl-node" data-tier="raven"><div class="dl-badge raven-b">RAVEN <span class="dl-pct">80%</span></div></div>
+        <div class="dl-node" data-tier="sparrow"><div class="dl-badge sparrow-b">SPARROW <span class="dl-pct">70%</span></div><span class="dl-desc">Building skills</span></div>
+        <div class="dl-node" data-tier="sparrow"><div class="dl-badge sparrow-b">SPARROW <span class="dl-pct">70%</span></div></div>
+        <div class="dl-node" data-tier="nest"><div class="dl-badge nest-b">NEST <span class="dl-pct">50%</span></div><span class="dl-desc">New recruit</span></div>
+        <div class="dl-node" data-tier="nest"><div class="dl-badge nest-b">NEST <span class="dl-pct">50%</span></div></div>
+        <div class="dl-node" data-tier="nest"><div class="dl-badge nest-b">NEST <span class="dl-pct">50%</span></div></div>
+      </div>
+      <div class="hawk-note">When a Raven in your downline reaches <strong style="color:var(--silver)">Hawk</strong>, they spin off with their own team — and you advance toward <strong style="color:var(--gold)">Eagle</strong>.</div>
+    </div>
+  </div>
+  <div class="flow-bar reveal">
+    <div class="flow-step"><span class="fs-dot" style="border-color:var(--brown)"></span><span style="color:var(--brown)">Nest</span></div>
+    <span class="fs-arrow">&rarr;</span>
+    <div class="flow-step"><span class="fs-dot" style="border-color:var(--green)"></span><span style="color:var(--green)">Sparrow</span></div>
+    <span class="fs-arrow">&rarr;</span>
+    <div class="flow-step"><span class="fs-dot" style="border-color:var(--purple)"></span><span style="color:var(--purple)">Raven</span></div>
+    <span class="fs-arrow">&rarr;</span>
+    <div class="flow-step"><span class="fs-dot" style="border-color:var(--silver)"></span><span style="color:var(--silver)">Hawk</span><span class="fs-label">(own team)</span></div>
+    <span class="fs-arrow">&rarr;</span>
+    <div class="flow-step"><span class="fs-dot" style="border-color:var(--gold)"></span><span style="color:var(--gold)">Eagle</span><span class="fs-label">(multiple teams)</span></div>
+  </div>
+</section>
+
+<footer><div class="tagline">New Era <span>IMO Structure</span> &mdash; Black Wing Ventures</div></footer>
+
+<div class="modal-overlay" id="tierModal">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" id="modalCloseBtn">&times;</button>
+    <div class="modal-tier" id="modalTier"></div>
+    <div class="modal-pct" id="modalPct"></div>
+    <div class="modal-desc" id="modalDesc"></div>
+    <div id="modalStats"></div>
+  </div>
+</div>
+
+<script>
+const tiers = {
+  bw: { name:'Black Wing', pct:'145%', color:'#4FC3F7',
+    desc:'The pinnacle of the New Era IMO. Black Wing is the overarching entity that supports the entire structure \u2014 providing resources, training, and infrastructure for all Eagles and their organizations.',
+    stats:['Oversees all Eagle organizations','Provides carrier access & training','Highest contract level at 145%']},
+  eagle: { name:'Eagle', pct:'100%', color:'#ffd700',
+    desc:'Eagles are independent leaders who oversee multiple Hawk teams and their downlines. They\'ve built an organization of organizations \u2014 a true business within the business.',
+    stats:['Oversees multiple Hawk teams','Own separate entity','100% contract level','Mentors and develops Hawks']},
+  hawk: { name:'Hawk', pct:'85%', color:'#c0c0c0',
+    desc:'Hawks have completed the growth cycle and earned the right to build their own downline. They recruit and develop a team of Ravens, Sparrows, and Nests.',
+    stats:['Builds and leads own team','Has their own downline','85% contract level','Next step: advance to Eagle']},
+  raven: { name:'Raven', pct:'80%', color:'#a08cc8',
+    desc:'Ravens are experienced agents developing leadership skills. They\'re on the path to Hawk status, learning to mentor others while growing their own production.',
+    stats:['Developing leadership ability','80% contract level','Mentoring Sparrows & Nests','Growing toward Hawk status']},
+  sparrow: { name:'Sparrow', pct:'70%', color:'#78b48c',
+    desc:'Sparrows have proven they can sell and are building consistency. They\'re learning the fundamentals of team building and advancing their product knowledge.',
+    stats:['Proven sales ability','70% contract level','Learning team dynamics','Building toward Raven']},
+  nest: { name:'Nest', pct:'50%', color:'#b4a082',
+    desc:'Every great agent starts here. Nests are new to the organization, learning the products, developing their skills, and beginning the growth cycle that leads all the way to Eagle.',
+    stats:['Starting point for everyone','50% contract level','Training & development phase','Unlimited growth potential']}
+};
+
+function showTierModal(tierKey) {
+  const data = tiers[tierKey];
+  if (!data) return;
+  const modal = document.getElementById('tierModal');
+  document.getElementById('modalTier').textContent = data.name;
+  document.getElementById('modalTier').style.color = data.color;
+  document.getElementById('modalPct').textContent = 'Contract Level: ' + data.pct;
+  document.getElementById('modalPct').style.color = data.color;
+  document.getElementById('modalDesc').textContent = data.desc;
+
+  const statsContainer = document.getElementById('modalStats');
+  while (statsContainer.firstChild) statsContainer.removeChild(statsContainer.firstChild);
+  data.stats.forEach(function(s) {
+    var div = document.createElement('div');
+    div.className = 'modal-stat';
+    var arrow = document.createElement('span');
+    arrow.style.color = data.color;
+    arrow.textContent = '\u2192';
+    div.appendChild(arrow);
+    var txt = document.createTextNode(' ' + s);
+    div.appendChild(txt);
+    statsContainer.appendChild(div);
+  });
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTierModal() {
+  document.getElementById('tierModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Event delegation for all clickable tier elements
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('[data-tier]');
+  if (el) { showTierModal(el.getAttribute('data-tier')); return; }
+  if (e.target.closest('.modal-overlay') && !e.target.closest('.modal')) closeTierModal();
+});
+document.getElementById('modalCloseBtn').addEventListener('click', closeTierModal);
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTierModal(); });
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el) { observer.observe(el); });
+
+// Active nav
+var sections = document.querySelectorAll('section');
+var navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(s) { if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id'); });
+  navLinks.forEach(function(a) {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
