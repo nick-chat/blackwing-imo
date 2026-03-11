@@ -194,13 +194,59 @@ section{min-height:100vh;padding:100px 60px 60px;position:relative;z-index:1;}
 .cycle-col.center{flex:1;display:flex;align-items:center;justify-content:center;}
 .cycle-col.right{width:360px;flex-shrink:0;}
 .eagle-card{
-  background:var(--card);border:1px solid rgba(255,215,0,0.12);
+  background:var(--card);border:1px solid rgba(255,215,0,0.18);
   border-radius:14px;padding:28px;position:relative;overflow:hidden;
   transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 0 30px rgba(255,215,0,0.04),inset 0 0 30px rgba(255,215,0,0.02);
 }
-@media(hover:hover){.eagle-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(255,215,0,0.05);}}
+@media(hover:hover){.eagle-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(255,215,0,0.08),0 0 40px rgba(255,215,0,0.05);}}
 .eagle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.eagle-card-glow{position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:var(--gold);filter:blur(80px);opacity:0.04;}
+.eagle-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.5;
+}
+.eagle-card-glow{position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:var(--gold);filter:blur(80px);opacity:0.06;animation:eagleGlow 4s ease-in-out infinite;}
+@keyframes eagleGlow{0%,100%{opacity:0.04;transform:scale(1)}50%{opacity:0.08;transform:scale(1.15)}}
+.eagle-crown{
+  position:absolute;top:16px;right:20px;font-size:28px;
+  filter:drop-shadow(0 0 8px rgba(255,215,0,0.4));
+  animation:crownFloat 3s ease-in-out infinite;
+}
+@keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-4px) rotate(5deg)}}
+.eagle-divider{
+  height:1px;margin:16px 0;
+  background:linear-gradient(90deg,transparent,rgba(255,215,0,0.2),transparent);
+}
+.eagle-benefits{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.eagle-benefit{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:11px;color:var(--muted);line-height:1.5;
+}
+.eagle-benefit-icon{
+  flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;color:var(--gold);margin-top:1px;
+}
+.eagle-milestone-label{
+  font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-top:18px;margin-bottom:10px;opacity:0.7;
+}
+.eagle-milestones{
+  display:flex;gap:6px;flex-wrap:wrap;
+}
+.eagle-milestone{
+  padding:6px 12px;border-radius:6px;
+  background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.1);
+  font-size:9px;color:var(--gold);font-weight:500;letter-spacing:0.3px;
+  display:flex;align-items:center;gap:5px;
+}
+.eagle-milestone .em-num{
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:8px;
+  width:16px;height:16px;border-radius:50%;
+  background:rgba(255,215,0,0.1);display:flex;align-items:center;justify-content:center;
+}
 .eagle-title{font-family:'Orbitron',sans-serif;font-weight:800;font-size:22px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:flex;align-items:baseline;gap:10px;}
 .eagle-pct{font-size:13px;font-weight:500;opacity:0.6;font-family:'Sora',sans-serif;}
 .eagle-desc{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.7;}
@@ -248,6 +294,8 @@ section{min-height:100vh;padding:100px 60px 60px;position:relative;z-index:1;}
 .center-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:14px;letter-spacing:3px;fill:var(--ice);text-anchor:middle;opacity:0.6;}
 .center-sub{font-family:'Sora',sans-serif;font-size:10px;fill:var(--muted);text-anchor:middle;}
 .arc-label-text{font-family:'Orbitron',sans-serif;font-weight:600;font-size:7px;letter-spacing:2px;fill:var(--ice);opacity:0.35;text-anchor:middle;}
+.eagle-path-glow{animation:eaglePathPulse 2.5s ease-in-out infinite;}
+@keyframes eaglePathPulse{0%,100%{opacity:0.15;filter:drop-shadow(0 0 2px rgba(255,215,0,0.3))}50%{opacity:0.5;filter:drop-shadow(0 0 6px rgba(255,215,0,0.6))}}
 
 .hawk-section-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;color:var(--silver);text-transform:uppercase;margin-bottom:4px;}
 .hawk-section-sub{font-size:11px;color:var(--muted);letter-spacing:0.5px;margin-bottom:20px;line-height:1.6;}
@@ -383,7 +431,13 @@ footer .tagline span{color:var(--ice);}
   .cycle-col.left,.cycle-col.right{max-width:100%;padding:0;}
   .eagle-card{padding:20px;border-radius:12px;}
   .eagle-title{font-size:18px;}
+  .eagle-crown{font-size:22px;top:12px;right:14px;}
   .eagle-desc{font-size:11px;}
+  .eagle-benefit{font-size:10px;}
+  .eagle-milestone-label{font-size:8px;margin-top:14px;}
+  .eagle-milestones{gap:4px;}
+  .eagle-milestone{font-size:8px;padding:5px 8px;}
+  .eagle-milestone .em-num{width:14px;height:14px;font-size:7px;}
   .eagle-team{padding:8px 10px;}
   .eagle-team-icon{width:28px;height:28px;font-size:7px;}
   .eagle-team-text{font-size:10px;}
@@ -507,14 +561,30 @@ footer .tagline span{color:var(--ice);}
     <div class="cycle-col left reveal-left">
       <div class="eagle-card">
         <div class="eagle-card-glow"></div>
+        <div class="eagle-crown">&#128081;</div>
         <div class="eagle-title">Eagle <span class="eagle-pct">100%</span></div>
-        <div class="eagle-desc">A separate entity that <strong>oversees multiple Hawk teams</strong> and their entire downlines. Eagles don't just lead one team — they build an <strong>organization of organizations</strong>.</div>
+        <div class="eagle-desc">Eagles are the <strong>ultimate goal</strong>. You're no longer just an agent — you're a <strong>business owner</strong> running a separate entity that oversees multiple Hawk teams and their entire downlines. This is where <strong>real wealth</strong> is built.</div>
+        <div class="eagle-divider"></div>
+        <div class="eagle-benefits">
+          <div class="eagle-benefit"><div class="eagle-benefit-icon">&#10003;</div><span><strong style="color:var(--gold)">100% contract level</strong> — maximum commission on every policy</span></div>
+          <div class="eagle-benefit"><div class="eagle-benefit-icon">&#10003;</div><span><strong style="color:var(--gold)">Own your entity</strong> — a real business, not a position in someone else's</span></div>
+          <div class="eagle-benefit"><div class="eagle-benefit-icon">&#10003;</div><span><strong style="color:var(--gold)">Override income</strong> — earn on every Hawk team beneath you</span></div>
+          <div class="eagle-benefit"><div class="eagle-benefit-icon">&#10003;</div><span><strong style="color:var(--gold)">Generational wealth</strong> — build an asset, not just a paycheck</span></div>
+        </div>
+        <div class="eagle-milestone-label">How You Get Here</div>
+        <div class="eagle-milestones">
+          <div class="eagle-milestone"><span class="em-num">1</span>Build a Hawk team</div>
+          <div class="eagle-milestone"><span class="em-num">2</span>Develop Hawks from within</div>
+          <div class="eagle-milestone"><span class="em-num">3</span>Multiple teams spin off</div>
+          <div class="eagle-milestone"><span class="em-num">4</span>Earn Eagle status</div>
+        </div>
+        <div class="eagle-divider"></div>
         <div class="eagle-teams">
           <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H1</div><div class="eagle-team-text">Hawk Team 1<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
           <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H2</div><div class="eagle-team-text">Hawk Team 2<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
           <div class="eagle-team" data-tier="hawk"><div class="eagle-team-icon">H3</div><div class="eagle-team-text">Hawk Team 3<span class="team-sub">Full downline: Ravens, Sparrows, Nests</span></div></div>
         </div>
-        <span class="eagle-status">Separate Entity</span>
+        <span class="eagle-status">Separate Entity — You Own This</span>
       </div>
     </div>
     <div class="cycle-col center reveal">
@@ -569,8 +639,10 @@ footer .tagline span{color:var(--ice);}
             <text x="260" y="96" class="node-pct" fill="#c0c0c0">85%</text>
           </g>
           <text x="260" y="30" class="node-label">STAGE 4 — BUILD YOUR TEAM</text>
-          <line x1="216" y1="85" x2="150" y2="85" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 3" opacity="0.2"/>
-          <text x="140" y="82" font-family="Orbitron,sans-serif" font-size="6" font-weight="600" fill="#ffd700" opacity="0.3" letter-spacing="1.5" text-anchor="end">EAGLE PATH</text>
+          <line x1="216" y1="85" x2="120" y2="85" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="6 4" class="eagle-path-glow"/>
+          <polygon points="122,80 112,85 122,90" fill="#ffd700" class="eagle-path-glow"/>
+          <text x="108" y="82" font-family="Orbitron,sans-serif" font-size="9" font-weight="700" fill="#ffd700" letter-spacing="2" text-anchor="end" class="eagle-path-glow">EAGLE PATH</text>
+          <text x="108" y="95" font-family="Sora,sans-serif" font-size="7" fill="#ffd700" opacity="0.4" text-anchor="end">Build multiple teams</text>
           <line x1="304" y1="85" x2="370" y2="85" stroke="#c0c0c0" stroke-width="1" stroke-dasharray="4 3" opacity="0.2"/>
           <text x="380" y="82" font-family="Orbitron,sans-serif" font-size="6" font-weight="600" fill="#c0c0c0" opacity="0.3" letter-spacing="1.5">DOWNLINE</text>
         </svg>
@@ -589,7 +661,7 @@ footer .tagline span{color:var(--ice);}
         <div class="dl-node" data-tier="nest"><div class="dl-badge nest-b">NEST <span class="dl-pct">50%</span></div></div>
         <div class="dl-node" data-tier="nest"><div class="dl-badge nest-b">NEST <span class="dl-pct">50%</span></div></div>
       </div>
-      <div class="hawk-note">When a Raven in your downline reaches <strong style="color:var(--silver)">Hawk</strong>, they spin off with their own team — and you advance toward <strong style="color:var(--gold)">Eagle</strong>.</div>
+      <div class="hawk-note">When a Raven in your downline reaches <strong style="color:var(--silver)">Hawk</strong>, they spin off with their own team — and you advance toward <strong style="color:var(--gold)">Eagle</strong>. Develop enough Hawks and you earn the right to <strong style="color:var(--gold)">own your own entity at 100%</strong>.</div>
     </div>
   </div>
   <div class="flow-bar reveal">
@@ -635,8 +707,8 @@ const tiers = {
     desc:'The pinnacle of the New Era IMO. Black Wing is the overarching entity that supports the entire structure \u2014 providing resources, training, and infrastructure for all Eagles and their organizations.',
     stats:['Oversees all Eagle organizations','Provides carrier access & training','Highest contract level at 145%']},
   eagle: { name:'Eagle', pct:'100%', color:'#ffd700',
-    desc:'Eagles are independent leaders who oversee multiple Hawk teams and their downlines. They\'ve built an organization of organizations \u2014 a true business within the business.',
-    stats:['Oversees multiple Hawk teams','Own separate entity','100% contract level','Mentors and develops Hawks']},
+    desc:'Eagles are the pinnacle of the New Era structure. You own a separate entity that oversees multiple Hawk teams and their entire downlines. This isn\'t a title \u2014 it\'s a business. You earn override income on every team beneath you, building generational wealth through an organization of organizations.',
+    stats:['100% contract level \u2014 maximum commissions','Own a separate legal entity \u2014 real business ownership','Override income from multiple Hawk teams','Generational wealth \u2014 build an asset, not just income','Mentor and develop future Hawks and Eagles','Full autonomy \u2014 you run your organization your way']},
   hawk: { name:'Hawk', pct:'85%', color:'#c0c0c0',
     desc:'Hawks have completed the growth cycle and earned the right to build their own downline. They recruit and develop a team of Ravens, Sparrows, and Nests.',
     stats:['Builds and leads own team','Has their own downline','85% contract level','Next step: advance to Eagle']},
